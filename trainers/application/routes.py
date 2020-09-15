@@ -1,7 +1,6 @@
 from application import app
-from flask import render_template, request
+from flask import jsonify
 import requests
-from os import getenv
 
 @app.route('/trainers', methods = ["GET"])
 def trainers():

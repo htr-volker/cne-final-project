@@ -1,7 +1,6 @@
 from application import app
-from flask import render_template, request
+from flask import render_template
 import requests
-from os import getenv
 
 def save_page(contents, filename):
     with open(f"templates/{filename}", "w") as page:
