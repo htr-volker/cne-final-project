@@ -47,5 +47,5 @@ class Intakes(db.Model):
         return ''.join([
             'Intake ID: ', self.id, '\r\n',
             'Intake Name: ', self.name, '\r\n',
-            'Start Date: ', self.start_date, '\r\n'
+            'Start Date: ', str(self.start_date), '\r\n'
         ])

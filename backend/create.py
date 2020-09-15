@@ -8,7 +8,7 @@ db.create_all()
 trainer1 = Trainers(first_name="Bill S.", last_name="Preston, Esq.")
 trainer2 = Trainers(first_name="Ted 'Theodore'", last_name="Logan")
 
-intake = Intakes(name="SeptDevOps", start_date=str(date(2020, 9, 14)))
+intake = Intakes(name="SeptDevOps", start_date=date(2020, 9, 14))
 intake.trainers.append(trainer1)
 intake.trainers.append(trainer2)
 
