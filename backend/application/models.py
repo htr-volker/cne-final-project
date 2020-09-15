@@ -5,7 +5,7 @@ class Trainers(db.Model):
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
 
-    intake_trainers = db.relationship("Trainees",
+    intake_trainers = db.relationship("Intakes",
             secondary="intake_trainers",
             cascade="delete",
             backref=db.backref("trainers"),
