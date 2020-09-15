@@ -1,5 +1,5 @@
 from application import db
-from application.models import Trainers, Trainees, Intakes
+from application.models import Trainers, Trainees, Intakes, intake_trainers
 from datetime import date
 
 db.drop_all()
