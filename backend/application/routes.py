@@ -1,5 +1,5 @@
 from application import app, db
-from application.models import Trainers, Trainees, intakes
+from application.models import Trainers, Trainees, Intakes
 from flask import request, jsonify
 from application.temp_data import data
 
