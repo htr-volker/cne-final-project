@@ -12,7 +12,7 @@ def trainers():
     data = { 
             "filename" : "application/templates/trainers.html",
             "contents" : contents,
-            "variables" : trainers
+            "variables" : trainers.json()
             }
 
     return jsonify(data)
