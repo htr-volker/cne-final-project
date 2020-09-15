@@ -14,4 +14,4 @@ def home():
 def trainers():
     page = requests.get("http://trainers:5500/trainers")
     save_page(page.json()["contents"], page.json()["filename"])
-    return render_template(page.json()["filename"], title = "Trainers", trainers = page.json()["trainers"])
+    return render_template(page.json()["filename"], title = "Trainers", trainers = page.json()["variables"])
