@@ -1,5 +1,14 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
+from os import getenv
 
 app = Flask(__name__)
+
+user = getenv("MYSQL_USER")
+password = getenv("MYSQL_ROOT_PASSWORD")
+
+app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://{user}:{password}@database:3306/trainingtools"
+
+db = SQLAlchemy(app)
 
 from application import routes
