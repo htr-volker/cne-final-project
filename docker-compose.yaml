@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  frontend:
+    container_name: frontend
+    image: htrvolker/cne-fp-frontend:latest
+    build: ./frontend
+    ports:
+      - published: 5000
+        target: 5000
+  trainers:
+    container_name: trainers
+    image: htrvolker/cne-fp-trainers:latest
+    build: ./trainers
+    ports:
+      - published: 5500
+        target: 5500
+  backend:
+    container_name: backend
+    image: htrvolker/cne-fp-backend:latest
+    build: ./backend
+    ports:
+      - published: 6000
+        target: 6000
