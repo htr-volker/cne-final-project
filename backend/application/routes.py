@@ -3,13 +3,13 @@ from flask import request, jsonify
 from application.temp_data import data
 
 @app.route('/trainers', methods = ["GET"])
-def home():
+def trainers():
     return jsonify(data["trainers"])
 
 @app.route('/trainees', methods = ["GET"])
-def home():
+def trainees():
     return jsonify(data["trainees"])
 
 @app.route('/intakes', methods = ["GET"])
-def home():
+def intakes():
     return jsonify(data["intakes"])
