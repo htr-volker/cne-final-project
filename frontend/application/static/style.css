@@ -1,12 +1,18 @@
 body {
     background-color: white;
-    color: black;
+    color: darkslategray;
     width: 500px;
-    margin: 0 auto;
-    border-left: 5px solid darkslategray;
 }
 
 h1 {
     color: darkslategray;
     text-align:center;
+}
+
+h2 {
+    color: darkslategray;
+}
+
+a {
+    color: aquamarine;
 }
