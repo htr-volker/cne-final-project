@@ -10,7 +10,7 @@ def trainers():
         contents = file.read()
 
     data = { 
-            "filename" : "application/templates/trainers.html",
+            "filename" : "trainers.html",
             "contents" : contents,
             "variables" : trainers.json()
             }
