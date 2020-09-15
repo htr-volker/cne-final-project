@@ -6,11 +6,11 @@ import requests
 def trainers():
     trainers = requests.get("http://backend:6000/trainers")
 
-    with open("templates/trainers.html", "r") as file:
+    with open("application/templates/trainers.html", "r") as file:
         contents = read(file)
 
     data = { 
-            "filename" : "templates/trainers.html",
+            "filename" : "application/templates/trainers.html",
             "contents" : contents,
             "variables" : trainers
             }
