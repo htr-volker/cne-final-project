@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    Trainers:
+    {% for trainer in trainers %}
+        - {{ trainer }} <br>
+    {% enfor %}
+{% endblock body_content %}
