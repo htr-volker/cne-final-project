@@ -12,6 +12,9 @@ intake = Intakes(name="SeptDevOps", start_date=date(2020, 9, 14))
 intake.trainers.append(trainer1)
 intake.trainers.append(trainer2)
 
+print(intake)
+print(intake.id)
+
 trainee1 = Trainees(first_name="Thea", last_name="Preston", intake_id=intake.id)
 trainee2 = Trainees(first_name="Billie",last_name="Logan", intake_id=intake.id)
 
