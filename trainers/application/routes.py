@@ -6,7 +6,7 @@ import requests
 def trainers():
     trainers = requests.get("http://backend:6000/trainers")
 
-    with open("trainers.html", "r") as file:
+    with open("templates/trainers.html", "r") as file:
         contents = read(file)
 
     data = { 
