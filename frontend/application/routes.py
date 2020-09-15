@@ -3,7 +3,7 @@ from flask import render_template
 import requests
 
 def save_page(contents, filename):
-    with open(f"templates/{filename}", "w+") as page:
+    with open(f"application/templates/{filename}", "w+") as page:
         page.write(contents)
 
 @app.route('/', methods = ["GET"])
