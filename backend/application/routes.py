@@ -1,6 +1,6 @@
 from application import app
 from flask import request, jsonify
-from temp_data import data
+from application.temp_data import data
 
 @app.route('/trainers', methods = ["GET"])
 def home():
