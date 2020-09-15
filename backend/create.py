@@ -21,5 +21,5 @@ db.session.commit()
 trainee1 = Trainees(first_name="Thea", last_name="Preston", intake_id=Intakes.query.filter_by(name="SeptDevOps").id)
 trainee2 = Trainees(first_name="Billie",last_name="Logan", intake_id=Intakes.query.filter_by(name="SeptDevOps").id)
 trainees = [trainee1, trainee2]
-db.session.add_all(traineers)
+db.session.add_all(trainees)
 db.session.commit()
