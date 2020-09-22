@@ -61,7 +61,7 @@ def create_ticket():
 @app.route('/close', methods = ["POST"])
 def close_ticket():
     ticket_id = request.data.decode("utf-8")
-    ticket = Ticket.query.filter_by(id = ticket_id).first()
+    ticket = Tickets.query.filter_by(id = ticket_id).first()
     ticket.open = False
     db.session.commit()
     return f"Ticket {ticket_id} closed"

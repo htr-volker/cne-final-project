@@ -1,5 +1,5 @@
 from application import app
-from application.forms import CreateTicketForm
+from application.forms import CreateTicketForm, TicketCompletedButton
 from flask import render_template, request, redirect, url_for
 from datetime import datetime
 import requests
@@ -16,10 +16,13 @@ def queue():
     app.logger.info(open_tickets.json())
     app.logger.info(closed_tickets.json())
     
+    done_button = TicketCompletedButton()
+
     return render_template("queue.html",
         title = "Help Queue",
         open_tickets = open_tickets.json(),
-        closed_tickets = closed_tickets.json()
+        closed_tickets = closed_tickets.json(),
+        done_button = done_button
     )
 
 @app.route('/create', methods = ["GET", "POST"])

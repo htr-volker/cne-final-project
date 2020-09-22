@@ -1,7 +1,13 @@
 body {
     background-color: white;
     color: darkslategray;
-    width: 500px;
+    width: auto;
+    justify-content: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
 }
 
 h1 {
@@ -23,4 +29,16 @@ h4 {
 
 a {
     color: aquamarine;
+}
+
+.navbar {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
+  
+.column {
+    flex: 50%;
 }

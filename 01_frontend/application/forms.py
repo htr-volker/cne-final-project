@@ -25,3 +25,6 @@ class CreateTicketForm(FlaskForm):
         ]
     )
     submit = SubmitField('Submit Ticket')
+
+class TicketCompletedButton(FlaskForm):
+    add_button = SubmitField('Done!')
