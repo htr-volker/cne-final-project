@@ -6,5 +6,5 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-EXPOSE 6000
+EXPOSE 7000
 ENTRYPOINT ["/usr/local/bin/python3", "app.py"]

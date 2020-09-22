@@ -3,33 +3,31 @@ services:
   frontend:
     container_name: frontend
     image: htrvolker/cne-fp-frontend:latest
-    build: ./frontend
+    build: ./01_frontend
+    environment:
+      SECRET_KEY: ${SECRET_KEY}
     ports:
     - published: 5000
       target: 5000
-  trainers:
-    container_name: trainers
-    image: htrvolker/cne-fp-trainers:latest
-    build: ./trainers
+  gateway:
+    container_name: gateway
+    image: nginx:alpine
+    volumes:
+    - type: bind
+      source: ./02_gateway/nginx.conf
+      target: /etc/nginx/nginx.conf
     ports:
-    - published: 5500
-      target: 5500
-  intakes:
-    container_name: intakes
-    image: htrvolker/cne-fp-intakes:latest
-    build: ./intakes
-    ports:
-    - published: 5501
-      target: 5501
-  backend:
-    container_name: backend
-    image: htrvolker/cne-fp-backend:latest
-    build: ./backend
+    - target: 6000
+      published: 6000
+  tickets:
+    container_name: tickets
+    image: htrvolker/cne-fp-tickets:latest
+    build: ./03_tickets
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     ports:
-    - published: 6000
-      target: 6000
+    - published: 7000
+      target: 7000
   database:
     container_name: database
     image: mysql:5.7
@@ -39,7 +37,7 @@ services:
       target: /var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: trainingtools
+      MYSQL_DATABASE: helpqueue
     ports:
     - published: 3306
       target: 3306

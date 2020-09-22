@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <h3>Queue:</h3>
+    {% for ticket in open_tickets.tickets %}
+        <h3>{{ ticket.title }}</h3>
+        <h4>{{ ticket.author }}</h4>
+        <i>submitted at {{ ticket.time_created }}</i><br>
+        {{ ticket.description }}<br>
+        <br>
+    {% endfor %}
+    <br>
+    <a href="{{ url_for('create_ticket') }}">Add Ticket</a>
+    <br>
+    <h3>Completed:</h3>
+    {% for ticket in closed_tickets.tickets %}
+        {{ ticket.title }}
+        {{ ticket.author }}, submitted at {{ ticket.time_created }}
+        {{ ticket.description }}
+        <br>
+    {% endfor %}
+{% endblock body_content %}

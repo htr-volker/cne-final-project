@@ -1,7 +1,0 @@
-{% extends "layout.html" %}
-{% block body_content %}
-    <h3>Trainers:</h3>
-    {% for trainer in trainers.trainers %}
-        - {{ trainer.first_name }} {{ trainer.last_name }}<br>
-    {% endfor %}
-{% endblock body_content %}

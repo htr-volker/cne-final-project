@@ -7,7 +7,7 @@ app = Flask(__name__)
 user = getenv("MYSQL_USER")
 password = getenv("MYSQL_ROOT_PASSWORD")
 
-app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://root:{password}@database:3306/trainingtools"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"mysql+pymysql://root:{password}@database:3306/helpqueue"
 
 db = SQLAlchemy(app)
 
