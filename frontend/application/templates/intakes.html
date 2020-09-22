@@ -1,0 +1,7 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <h2>Intakes:</h2>
+    {% for intake in intakes.intakes %}
+        <a href="{{ url_for('intake_info', intake = intake.name) }}"> {{ intake.name }} </a><br>
+    {% endfor %}
+{% endblock body_content %}

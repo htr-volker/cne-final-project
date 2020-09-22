@@ -14,6 +14,13 @@ services:
     ports:
     - published: 5500
       target: 5500
+  intakes:
+    container_name: intakes
+    image: htrvolker/cne-fp-intakes:latest
+    build: ./intakes
+    ports:
+    - published: 5501
+      target: 5501
   backend:
     container_name: backend
     image: htrvolker/cne-fp-backend:latest
@@ -26,9 +33,15 @@ services:
   database:
     container_name: database
     image: mysql:5.7
+    volumes:
+    - type: volume
+      source: database_vol
+      target: /var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
       MYSQL_DATABASE: trainingtools
     ports:
     - published: 3306
       target: 3306
+volumes:
+  database_vol:

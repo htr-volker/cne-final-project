@@ -12,11 +12,11 @@ db.session.add_all(trainers)
 db.session.commit()
 
 intake = Intakes(name="SeptDevOps", start_date=date(2020, 9, 14))
-intake.trainers.append(Trainers.query.filter_by(first_name="Bill S.").first())
-intake.trainers.append(Trainers.query.filter_by(first_name="Ted 'Theodore'").first())
 db.session.add(intake)
 db.session.commit()
 
+intake.trainers.append(Trainers.query.filter_by(first_name="Bill S.").first())
+intake.trainers.append(Trainers.query.filter_by(first_name="Ted 'Theodore'").first())
 
 trainee1 = Trainees(first_name="Thea", last_name="Preston", intake_id=Intakes.query.filter_by(name="SeptDevOps").first().id)
 trainee2 = Trainees(first_name="Billie",last_name="Logan", intake_id=Intakes.query.filter_by(name="SeptDevOps").first().id)

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body_content %}
-    Trainers:
+    <p>Trainers:</p>
     {% for trainer in trainers %}
-        - {{ trainer.first_name }} {{ trainer.last_name }} <br>
+        - {{ trainer.first_name }} {{ trainer.last_name }}<br>
     {% endfor %}
 {% endblock body_content %}

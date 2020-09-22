@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block body_content %}
+    <h3>{{ intake.name }}:</h3>
+    <h4>Trainer(s):</h4>
+    {% for trainer in intake.trainers %}
+        - {{ trainer.first_name }} {{ trainer.last_name }}<br>
+    {% endfor %}
+    <h4>Trainees:</h4>
+    {% for trainee in intake.trainees %}
+        - {{ trainee.first_name }} {{ trainee.last_name }}<br>
+    {% endfor %}
+{% endblock body_content %}
