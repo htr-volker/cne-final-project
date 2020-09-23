@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block body_content %}
     <div class="row">
-        <div class="column">
+        <div class="left-column">
             <h3>Queue:</h3>
             {% for ticket in open_tickets.tickets %}
                 <h3>{{ ticket.title }}</h3>
@@ -15,7 +15,7 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="column">
+        <div class="right-column">
             <h3>Completed:</h3>
             {% for ticket in closed_tickets.tickets %}
                 <h3>{{ ticket.title }}</h3>

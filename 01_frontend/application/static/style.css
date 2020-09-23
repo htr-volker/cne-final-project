@@ -39,6 +39,12 @@ a {
     display: flex;
 }
   
-.column {
+.left-column {
     flex: 50%;
+    background-color: lightgrey;
+}
+
+.right-column {
+    flex: 50%;
+    background-color: lightcyan;
 }
