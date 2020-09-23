@@ -27,7 +27,8 @@ services:
       target: 7000
   database:
     container_name: database
-    image: mysql:5.7
+    image: htrvolker/cne-fb-database:latest
+    build: ./04_database
     volumes:
     - type: volume
       source: database_vol
