@@ -11,11 +11,8 @@ services:
       target: 5000
   gateway:
     container_name: gateway
-    image: nginx:alpine
-    volumes:
-    - type: bind
-      source: ./02_gateway/nginx.conf
-      target: /etc/nginx/nginx.conf
+    image: htrvolker/cne-fp-gateway:latest
+    build: ./02_gateway
     ports:
     - target: 6000
       published: 6000
