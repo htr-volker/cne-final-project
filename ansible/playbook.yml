@@ -1,0 +1,21 @@
+- name: Update all packages  
+  hosts: all
+  become: true
+  tasks:
+  - name: updating packages
+    command: sudo apt-get update -y
+
+- hosts: myvm
+  become: true
+  roles: 
+    - ansible     
+    - angular-node-npm     
+    - git
+    - docker
+    - terraform
+    - jenkins
+    - java
+    - nodejs
+  tasks:
+  - name: configuring user access
+    command: sudo usermod -aG sudo jenkins
