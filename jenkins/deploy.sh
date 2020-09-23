@@ -18,19 +18,19 @@ output()
 
 
 output "Deploying the database object"
-kubectl apply -f ./pods/database.yaml
+kubectl apply -f ./k8s/database.yaml
 
-output "Delay NGINX start for 1 minute while waiting for frontend pods to start running"
+output "Wait for database to finish initialising"
 sleep 1m
 
 output "Deploying the backend object"
-kubectl apply -f ./pods/backend.yaml
+kubectl apply -f ./k8s/backend.yaml
 
 output "Deploying the gateway object"
-kubectl apply -f ./pods/gateway.yaml
+kubectl apply -f ./k8s/gateway.yaml
 
 output "Deploying the frontend"
-kubectl apply -f ./pods/frontend.yaml
+kubectl apply -f ./k8s/frontend.yaml
 
 output "Waiting 2 minute for health check of load balancer to compelete"
 sleep 2m
