@@ -23,8 +23,8 @@ kubectl apply -f ./k8s/database.yaml
 output "Wait for database to finish initialising"
 sleep 1m
 
-output "Deploying the backend object"
-kubectl apply -f ./k8s/backend.yaml
+output "Deploying the tickets object"
+kubectl apply -f ./k8s/tickets.yaml
 
 output "Deploying the gateway object"
 kubectl apply -f ./k8s/gateway.yaml
