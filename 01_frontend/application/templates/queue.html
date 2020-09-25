@@ -2,27 +2,33 @@
 {% block body_content %}
     <div class="row">
         <div class="left-column">
-            <h3>Queue:</h3>
+            <h2>Queue</h2>
+            <hr>
             {% for ticket in open_tickets.tickets %}
-                <h3>{{ ticket.title }}</h3>
+                <h3>{{ ticket.title }}
+                    <button class="donebutton" style="float: right;" onclick="document.location='{{ url_for('close_ticket', id = ticket.id) }}'">Done</button>
+                    <button class="deletebutton" style="float: right;" onclick="document.location='{{ url_for('delete_ticket', id = ticket.id) }}'">Delete</button>
+                </h3>
                 <b>{{ ticket.author }}</b><br>
-                <i>submitted at {{ ticket.time_created }}</i><br>
+                <i>submitted at {{ ticket.time_created }}</i><br><br>
                 {{ ticket.description }}<br>
                 <br>
-                <form method="GET" action="{{ url_for('close_ticket', id = ticket.id) }}">
-                <div class="form-group">
-                    {{ done_button.add_button }}
-                </div>
+                <hr>
             {% endfor %}
         </div>
+        <div class="separator"></div>
         <div class="right-column">
-            <h3>Completed:</h3>
+            <h2>Completed</h2>
+            <hr>
             {% for ticket in closed_tickets.tickets %}
-                <h3>{{ ticket.title }}</h3>
+                <h3>{{ ticket.title }}
+                    <button class="deletebutton" style="float: right;" onclick="document.location='{{ url_for('delete_ticket', id = ticket.id) }}'">Delete</button>
+                </h3>
                 <b>{{ ticket.author }}</b><br>
-                <i>submitted at {{ ticket.time_created }}</i><br>
+                <i>submitted at {{ ticket.time_created }}</i><br><br>
                 {{ ticket.description }}<br>
                 <br>
+                <hr>
             {% endfor %}
         </div>
     </div>

@@ -8,9 +8,14 @@
 			</div>
 		<div class="navbar">
 			<h2>
+				<button class="navbutton" onclick="document.location='{{ url_for('home') }}'">Home</button>
+				<button class="navbutton" onclick="document.location='{{ url_for('queue') }}'">Help Queue</button>
+				<button class="navbutton" onclick="document.location='{{ url_for('create_ticket') }}'">Add Ticket</button>
+				<!--
 				<a href="{{ url_for('home') }}">Home</a>
 				<a href="{{ url_for('queue') }}">Help Queue</a>
 				<a href="{{ url_for('create_ticket') }}">Add Ticket</a>
+				-->
 			</h2>
 		</div>
 	</head>

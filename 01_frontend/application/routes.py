@@ -49,6 +49,11 @@ def close_ticket(id):
     requests.post("http://gateway:6000/tickets/close", data = str(id))
     return redirect(url_for("queue"))
 
+@app.route('/delete/<int:id>', methods = ["GET"])
+def delete_ticket(id):
+    requests.post("http://gateway:6000/tickets/delete", data = str(id))
+    return redirect(url_for("queue"))
+
 '''
 @app.route('/intakes', methods = ["GET"])
 def intakes():

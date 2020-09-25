@@ -8,11 +8,12 @@ body {
     padding-left: 100px;
     padding-right: 100px;
     padding-top: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 h1 {
     color: darkslategray;
-    text-align:center;
+    text-align: center;
 }
 
 h2 {
@@ -40,11 +41,61 @@ a {
 }
   
 .left-column {
-    flex: 50%;
-    background-color: lightgrey;
+    flex: 49%;
+    background-color: lightcyan;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
 }
 
 .right-column {
-    flex: 50%;
+    flex: 49%;
     background-color: lightcyan;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+}
+
+.separator {
+    flex: 2%;
+    background-color: white;
+}
+
+.navbutton {
+    background-color: darkslategrey;
+    color: aquamarine;
+    border: 2px solid darkslategrey;
+    transition-duration: 0.2s;
+    font-size: 15px
+}
+
+.navbutton:hover {
+    background-color: aquamarine;
+    color: darkslategrey;
+}
+
+.donebutton {
+    background-color: darkslategray;
+    color: aquamarine;
+    border: 2px solid darkslategrey;
+    transition-duration: 0.2s;
+    font-size: 15px
+}
+
+.donebutton:hover {
+    background-color: aquamarine;
+    color: darkslategrey;
+}
+
+.deletebutton {
+    background-color: darkslategray;
+    color: aquamarine;
+    border: 2px solid darkslategrey;
+    transition-duration: 0.2s;
+    font-size: 15px
+}
+
+.deletebutton:hover {
+    background-color: red;
+    color: white;
 }

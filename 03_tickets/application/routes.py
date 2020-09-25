@@ -5,7 +5,7 @@ from datetime import datetime
 
 @app.route('/open', methods = ["GET"])
 def open_tickets():
-    tickets = Tickets.query.filter_by(open=True).all()
+    tickets = Tickets.query.filter_by(open=True).order_by(Tickets.time_created).all()
 
     response = { "tickets" : [] }
     
@@ -24,7 +24,7 @@ def open_tickets():
 
 @app.route('/closed', methods = ["GET"])
 def closed_tickets():
-    tickets = Tickets.query.filter_by(open=False).all()
+    tickets = Tickets.query.filter_by(open=False).order_by(Tickets.time_created.desc()).all()
 
     response = { "tickets" : [] }
     
@@ -70,6 +70,10 @@ def close_ticket():
 def update_ticket():
     return "WIP"
 
-@app.route('/delete', methods = ["GET"])
+@app.route('/delete', methods = ["POST"])
 def delete_ticket():
-    return "WIP"
+    ticket_id = request.data.decode("utf-8")
+    ticket = Tickets.query.filter_by(id = ticket_id).first()
+    db.session.delete(ticket)
+    db.session.commit()
+    return f"Ticket {ticket_id} deleted"
